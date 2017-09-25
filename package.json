@@ -1,0 +1,20 @@
+{
+  "name": "ez-linkify",
+  "version": "1.0.0",
+  "description": "A tiny JS plugin to make links in the DOM for you",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/jewbetcha/ez-linkify"
+  },
+  "keywords": [
+    "link",
+    "dom",
+    "js"
+  ],
+  "author": "Coleman Rollins",
+  "license": "MIT"
+}
