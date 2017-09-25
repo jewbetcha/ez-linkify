@@ -1,7 +1,7 @@
 // Links have the notation: [[<link text>, <link target>]]
 // linkify takes in an element containing text with a link
 // and replaces it with a built <a> tag
-const linkify = (el, { targetBlank = false, classes = [] }) => {
+const linkify = (el, { targetBlank = false, classNames = [] }) => {
   // Get the text from the element and isolate the link string, also split
   // into an array.
 
