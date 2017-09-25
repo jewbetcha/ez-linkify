@@ -36,3 +36,5 @@ const linkify = (el, { targetBlank = false, classNames = [] }) => {
     count++;
   }
 };
+
+export default linkify;

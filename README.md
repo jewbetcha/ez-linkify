@@ -1,5 +1,5 @@
 # ez-linkify
-A tiny JS plugin to create links in the DOM for you out of plain text. I ran into a situtation where some dynamically created content could only be plain text, but needed links, so I made this. Similar to markup, just structure your links in a certain way and linkify will do the rest.
+A tiny, zero dependency JS plugin to create links in the DOM for you out of plain text. I ran into a situtation where some dynamically created content could only be plain text, but needed links, so I made this. Similar to markup, just structure your links in a certain way and linkify will do the rest.
 
 ## Usage
 ### Structure your links with double brackets like so:
@@ -23,7 +23,7 @@ const element = document.querySelector('.my-element');
 
 linkify(element);
 ```
-And thats it! Linkify will replace your double bracket links with new `<a>` tags.
+And thats it! Linkify will replace your double bracket links with new `<a>` tags. Elements can contain multiple links, linkify will convert all of them.
 
 ### Options
 At the moment there are only two options:
