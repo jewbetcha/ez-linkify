@@ -30,8 +30,8 @@ At the moment there are only two options:
 
 ```javascript
 linkify(element, {
-    targetBlank: false // boolean - defaults to false
-    classNames: [] // array - defaults to []
+    targetBlank: false // boolean, optional - defaults to false
+    classNames: [] // array, optional - defaults to []
 });
 ```
 
