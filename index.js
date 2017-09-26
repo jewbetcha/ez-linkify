@@ -11,9 +11,14 @@ const Linkify = (el, options = {}) => {
   let classNames = options.classNames;
 
   let startingText = el.innerText;
-  let reg = startingText.match(/\[\[(.*?)\]\]/g).map(function(v) {
-    return v.replace(/\[+|\]+/g, "");
-  });
+  let reg = startingText.match(/\[\[(.*?)\]\]/g);
+  if (reg === null) {
+      throw 'Error: There are no matching strings in your element'; 
+  } else {
+      reg = reg.map(function(v) {
+          return v.replace(/\[+|\]+/g, "");
+      });
+  }
   let count = 0;
   for (let i of reg) {
     let arr = i.split(",");
