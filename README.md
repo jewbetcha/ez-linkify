@@ -21,7 +21,7 @@ import Linkify from 'ez-linkify';
 // Grab the element containing link or links in the text
 const element = document.querySelector('.my-element');
 
-linkify(element);
+Linkify(element);
 ```
 And thats it! Linkify will replace your double bracket links with new `<a>` tags. Elements can contain multiple links, linkify will convert all of them.
 
@@ -29,7 +29,7 @@ And thats it! Linkify will replace your double bracket links with new `<a>` tags
 At the moment there are only two options:
 
 ```javascript
-linkify(element, {
+Linkify(element, {
     targetBlank: false // boolean, optional - defaults to false
     classNames: [] // array, optional - defaults to []
 });
@@ -44,7 +44,9 @@ If you wanted to create a link that looks like this:
 In your markup:
 ```html
 <div class="content">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit vel sem vitae ullamcorper. [[Check out my link!, https://google.com]] Curabitur id dapibus mauris. Proin semper pulvinar eleifend.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Fusce hendrerit vel sem vitae ullamcorper. [[Check out my link!, https://google.com]] 
+    Curabitur id dapibus mauris. Proin semper pulvinar eleifend.
 </div>
 ```
 
@@ -55,7 +57,7 @@ import linkify from 'ez-linkify';
 // Grab the element containing link or links in the text
 const element = document.querySelector('.content');
 
-linkify(element, {
+Linkify(element, {
     targetBlank: true,
     classNames: [
         'link',
@@ -67,7 +69,9 @@ linkify(element, {
 Result:
 ```html
 <div class="content">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit vel sem vitae ullamcorper. <a href="https://google.com" target="_blank" class="link link-blue">Check out my link!</a> Curabitur id dapibus mauris. Proin semper pulvinar eleifend.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Fusce hendrerit vel sem vitae ullamcorper. <a href="https://google.com" target="_blank" class="link link-blue">Check out my link!</a> 
+    Curabitur id dapibus mauris. Proin semper pulvinar eleifend.
 </div>
 ```
 
