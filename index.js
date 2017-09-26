@@ -1,9 +1,14 @@
 // Links have the notation: [[<link text>, <link target>]]
 // linkify takes in an element containing text with a link
 // and replaces it with a built <a> tag
-const linkify = (el, { targetBlank = false, classNames = [] }) => {
+const Linkify = (el, options = {}) => {
   // Get the text from the element and isolate the link string, also split
   // into an array.
+  options.targetBlank = options.targetBlank || false;
+  let tb = options.targetBlank;
+
+  options.classNames = options.classNames || [];
+  let classNames = options.classNames;
 
   let startingText = el.innerText;
   let reg = startingText.match(/\[\[(.*?)\]\]/g).map(function(v) {
@@ -15,7 +20,7 @@ const linkify = (el, { targetBlank = false, classNames = [] }) => {
     let link = document.createElement("a");
     link.setAttribute("href", arr[1]);
     link.innerHTML = arr[0];
-    if (targetBlank) {
+    if (tb) {
       link.setAttribute("target", "_blank");
     }
     if (classNames.length === 0) {
@@ -37,4 +42,4 @@ const linkify = (el, { targetBlank = false, classNames = [] }) => {
   }
 };
 
-export default linkify;
+export default Linkify;
