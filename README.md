@@ -52,7 +52,7 @@ In your markup:
 
 In your javascript:
 ```javascript
-import linkify from 'ez-linkify';
+import Linkify from 'ez-linkify';
 
 // Grab the element containing link or links in the text
 const element = document.querySelector('.content');
