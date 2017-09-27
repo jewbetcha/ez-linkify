@@ -70,13 +70,11 @@
 "use strict";
 
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-// Links have the notation: [[<link text>, <link target>]]
-// linkify takes in an element containing text with a link
-// and replaces it with a built <a> tag
-
-function Linkify(el) {
+exports.default = function (el) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
   // Get the text from the element and isolate the link string, also split
@@ -123,9 +121,11 @@ function Linkify(el) {
     }
     count += 1;
   });
-}
+};
 
-module.exports = Linkify;
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // Links have the notation: [[<link text>, <link target>]]
+// linkify takes in an element containing text with a link
+// and replaces it with a built <a> tag
 
 /***/ })
 /******/ ]);

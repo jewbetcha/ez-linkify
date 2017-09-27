@@ -14,9 +14,9 @@ let cleanOptions = {
 // Config
 const config = {
   context: path.resolve(__dirname),
-  target: "node",
+  target: "web",
   entry: {
-    linkify: "./index.js"
+    linkify: "./linkify.js"
   },
   output: {
     path: path.resolve(__dirname),

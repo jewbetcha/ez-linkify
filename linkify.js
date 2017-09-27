@@ -2,7 +2,7 @@
 // linkify takes in an element containing text with a link
 // and replaces it with a built <a> tag
 
-function Linkify(el, options = {}) {
+export default function (el, options = {}) {
   // Get the text from the element and isolate the link string, also split
   // into an array.
   const tb = options.targetBlank || false;
@@ -44,5 +44,3 @@ function Linkify(el, options = {}) {
     count += 1;
   });
 }
-
-module.exports = Linkify;
