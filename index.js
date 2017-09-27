@@ -2,15 +2,11 @@
 // linkify takes in an element containing text with a link
 // and replaces it with a built <a> tag
 
-
 function Linkify(el, options = {}) {
   // Get the text from the element and isolate the link string, also split
   // into an array.
-  let tb = options.targetBlank;
-  tb = options.targetBlank || false;
-
-  let classNames = [...options.classNames];
-  classNames = options.classNames || [];
+  const tb = options.targetBlank || false;
+  let classNames = [...options.classNames] || [];
 
   const startingText = el.innerText;
   let reg = startingText.match(/\[\[(.*?)\]\]/g);
