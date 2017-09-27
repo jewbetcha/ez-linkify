@@ -4,7 +4,8 @@
   "description": "A tiny JS plugin to make links in the DOM for you",
   "main": "src/linkify.js",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack",
+    "minify": "webpack -p",
     "dev": "webpack --watch",
     "lint": "eslint --fix index.js"
   },
