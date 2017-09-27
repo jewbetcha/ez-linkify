@@ -6,25 +6,26 @@
 function Linkify(el, options = {}) {
   // Get the text from the element and isolate the link string, also split
   // into an array.
-  options.targetBlank = options.targetBlank || false;
-  const tb = options.targetBlank;
+  let tb = options.targetBlank;
+  tb = options.targetBlank || false;
 
-  options.classNames = options.classNames || [];
-  let classNames = options.classNames;
+  let classNames = [...options.classNames];
+  classNames = options.classNames || [];
 
   const startingText = el.innerText;
   let reg = startingText.match(/\[\[(.*?)\]\]/g);
   if (reg === null) {
-    throw 'Error: There are no matching strings in your element';
+    throw new Error('There are no matching strings in your element');
   } else {
     reg = reg.map(v => v.replace(/\[+|\]+/g, ''));
   }
   let count = 0;
-  for (const i of reg) {
+  reg.forEach((i) => {
     const arr = i.split(',');
     const link = document.createElement('a');
     link.setAttribute('href', arr[1]);
-    link.innerHTML = arr[0];
+    const linkText = arr[0];
+    link.innerHTML = linkText;
     if (tb) {
       link.setAttribute('target', '_blank');
     }
@@ -34,17 +35,18 @@ function Linkify(el, options = {}) {
       link.classList.add(...classNames);
     }
 
+    const element = el;
     const replaceText = `[[${i}]]`;
     if (count === 0) {
       const newText = startingText.replace(replaceText, link.outerHTML);
-      el.innerHTML = newText;
+      element.innerHTML = newText;
     } else {
       const midwayText = el.innerHTML;
       const newText = midwayText.replace(replaceText, link.outerHTML);
-      el.innerHTML = newText;
+      element.innerHTML = newText;
     }
-    count++;
-  }
+    count += 1;
+  });
 }
 
 module.exports = Linkify;
